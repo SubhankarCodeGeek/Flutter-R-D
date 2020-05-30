@@ -5,10 +5,13 @@ import 'image_banner.dart';
 import 'text_section.dart';
 
 class LocationDetails extends StatelessWidget {
+  final int _locationId;
+
+  LocationDetails(this._locationId)
+
   @override
   Widget build(BuildContext context) {
-    final locations = Location.fetchAll();
-    final location = locations.first;
+    final location = Location.fetchById(_locationId);
 
     return Scaffold(
         appBar: AppBar(
@@ -19,7 +22,8 @@ class LocationDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             ImageBanner(location.imagePath),
-          ]..addAll(textSections(location)),
+          ]
+            ..addAll(textSections(location)),
         ));
   }
 
