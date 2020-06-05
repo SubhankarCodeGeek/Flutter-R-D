@@ -8,12 +8,12 @@ class Location {
 
   Location(this.id, this.name, this.imagePath, this.facts);
 
-  static Location fetchById(int locatiodId) {
+  static Location fetchById(int locationId) {
     //fetch all locations, iterate them and when we find the location
     //with the ID we want, return it immediately
     List<Location> locations = Location.fetchAll();
     for (var i = 0; i < locations.length; i++) {
-      if (locations[i] == locatiodId) {
+      if (locations[i].id == locationId) {
         return locations[i];
       }
     }

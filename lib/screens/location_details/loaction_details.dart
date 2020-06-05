@@ -7,7 +7,7 @@ import 'text_section.dart';
 class LocationDetails extends StatelessWidget {
   final int _locationId;
 
-  LocationDetails(this._locationId)
+  LocationDetails(this._locationId);
 
   @override
   Widget build(BuildContext context) {
