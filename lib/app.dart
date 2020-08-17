@@ -1,9 +1,11 @@
 import 'package:coronaapp/screens/location_details/loaction_details.dart';
 import 'package:coronaapp/screens/locations/locations.dart';
+import 'package:coronaapp/screens/splash/splash.dart';
 import 'package:coronaapp/style.dart';
 import 'package:flutter/material.dart';
 
-const LocationRoute = '/';
+const SplashRoute = '/';
+const LocationRoute = '/locations';
 const LocationDetailsRoute = '/location_details';
 
 class App extends StatelessWidget {
@@ -11,7 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: _routes(),
-      home: Locations(),
+      home: Splash(),
       theme: _theme(),
     );
   }
@@ -21,6 +23,10 @@ class App extends StatelessWidget {
       final Map<String, dynamic> arguments = settings.arguments;
       Widget screen;
       switch (settings.name) {
+        case SplashRoute:
+          screen = Splash();
+          break;
+
         case LocationRoute:
           screen = Locations();
           break;
